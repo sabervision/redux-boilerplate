@@ -1,10 +1,10 @@
 var path = require('path');
 
 module.exports = {
-	entry: {
+	entry: [
 		'babel-polyfill',
-		[__dirname, '.' 'src', 'app', 'index.js'].join(path.sep)
-	},
+		[__dirname, '.','src', 'app', 'index.js'].join(path.sep)
+	],
 	resove: {
 		modulesDirectories: ['node_modules']
 	},
@@ -13,10 +13,10 @@ module.exports = {
 		filename: 'bundles.js'
 	},
 	module: {
-		loaders: {
+		loaders: [{
 			test: /\.jsx?$/,
 			exclude: / (node_modules) /,
 			loader: 'babel'
-		}
+		}]
 	}
 };
