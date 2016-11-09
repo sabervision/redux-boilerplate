@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var webpack = require('webpack-stream');
 
+
+
 gulp.task('scripts', function() {
 	return gulp.src('./app/app.js')
 		.pipe(webpack(require('./webpack.config.js')))
@@ -13,3 +15,12 @@ gulp.task('html', function() {
 		.pipe(gulp.dest('./build'))
 	;
 })
+
+
+// run the 'scripts' and 'html' tasks before the function
+// if changes in **.js, update scripts
+// if changes in **.html, update html
+gulp.task('default', ['scripts', 'html'], function() {
+	gulp.watch('./src/app/**/**.js', ['scripts']);
+	gulp.watch('./src/**/**.html', ['html']);
+});
