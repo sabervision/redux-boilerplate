@@ -12,11 +12,11 @@ const tasks = [
 	},
 	{
 		type: 'habit',
-		text: 'Walk up the stairs'
+		text: 'Walk up the stairs',
 	},
 	{
 		type: 'todo',
-		text: 'Finish redux slides'
+		text: 'Finish redux slides',
 		completed: true
 	}
 ];
